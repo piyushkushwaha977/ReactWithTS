@@ -1,6 +1,10 @@
 import Message from "./components/Message"
 import UserInfo from "./components/UserInfo"
 import NameList from "./components/NameList"
+import Status from "./components/Status"
+import PropsCompo from "./components/PropsCompo"
+import Button from "./components/Button"
+import Input from "./components/Input"
 
 
 function App() {
@@ -39,7 +43,28 @@ function App() {
       <Message name="Piyush" email="piyush@gmail.com" isUserVerified={true} id={12345678}/>
       <UserInfo user={UserDetails}  />
       <NameList users={NameListArray} />
+
+      <div className=" mt-12 text-4xl text-center ">
+        <Status status="success"/>
+
+        <PropsCompo children={<Message name="Piyush" email="piyush@gmail.com" isUserVerified={true} id={12345678} />}> 
+           {/* <UserInfo user={UserDetails}/> */}
+        </PropsCompo>
+      </div>
     </div>
+
+    {/* REACT Events with ts  */}
+     <div className=" mt-10 text-center text-4xl flex flex-col gap-6">
+      <Button styles={{ border: "2px solid red" , padding:"1rem" , borderRadius:"1rem" }}
+       handleClick={ (event,id=6) => console.log("button Clicked" , event ,id)}/>
+
+        <Input  changeInput={ event => console.log(event.target.value)}
+        // styles={{border:" 2px solid black" ,padding: "1rem ",}}
+        />
+     </div>
+
+     
+
     </div>
   )
 }
