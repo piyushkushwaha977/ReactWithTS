@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router'
 import { RouterProvider } from 'react-router/dom'
 import './index.css'
 import App from './App.tsx'
+import UserAuth from './components/UserAuth.tsx'
 
 export function Layout(){
   return(
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path:"/layout",
     element:<Layout/>
+  },
+  {
+    path:"/auth",
+    element:<UserAuth/>
   }
 ])
 
