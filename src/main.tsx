@@ -4,6 +4,7 @@ import { RouterProvider } from 'react-router/dom'
 import './index.css'
 import App from './App.tsx'
 import UserAuth from './components/UserAuth.tsx'
+import Reducer from './components/Reducer.tsx'
 
 export function Layout(){
   return(
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path:"/auth",
     element:<UserAuth/>
+  },
+  {
+    path:"/reducer",
+    element:<Reducer/>
   }
 ])
 
